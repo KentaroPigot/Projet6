@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Routes, Route, useParams } from "react-router-dom";
 
 import Navbar from "./components/Navbar.js";
@@ -21,8 +21,11 @@ function App() {
   const [locations, setLocations] = useState(locationsData);
   const [route, setRoute] = useState("home");
 
+  useEffect(() => {
+    setRoute(window.location.pathname);
+  }, []);
+
   const Home = () => {
-    setRoute("home");
     return (
       <>
         <Banner
@@ -36,7 +39,6 @@ function App() {
   };
 
   const About = () => {
-    setRoute("about");
     return (
       <>
         <Banner className={styles.section} bannerimg={bannerImgAbout} />
@@ -50,7 +52,6 @@ function App() {
   };
 
   const LocationPage = () => {
-    setRoute("");
     const params = useParams();
     const location = locationsData.find((location) => {
       return location.id === params.id;
