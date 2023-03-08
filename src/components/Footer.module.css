@@ -1,0 +1,22 @@
+footer {
+  margin-top: 5rem;
+  background-color: black;
+  color: white;
+  height: 209px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  gap: 33px;
+}
+
+footer img {
+  height: 39.44px;
+  width: 122px;
+}
+
+footer h2 {
+  font-size: 2.4rem;
+  font-weight: 500;
+}

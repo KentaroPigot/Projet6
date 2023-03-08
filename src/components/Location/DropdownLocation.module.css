@@ -1,0 +1,48 @@
+.dropdown {
+  width: min(1023px, calc(100% - 40px));
+  height: auto;
+  margin-inline: auto;
+}
+
+.header {
+  width: 100%;
+  background-color: rgb(255, 96, 96);
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 1.81rem;
+
+  font-size: 1.8rem;
+  font-weight: 400;
+
+  cursor: pointer;
+}
+
+.dropdown h2 {
+  color: white;
+  font-size: inherit;
+}
+
+.dropdown i {
+  color: white;
+}
+
+.message {
+  background-color: #f6f6f6;
+  padding: 2.3rem 1.8rem;
+  font-size: 1.8rem;
+  font-weight: 400;
+}
+
+@media (max-width: 768px) {
+  .dropdown {
+    width: 100%;
+  }
+  .message {
+    font-size: 12px;
+  }
+  .dropdown h2 {
+    font-size: 13px;
+  }
+}

@@ -1,0 +1,28 @@
+.btn-slide {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+}
+
+.btn-slide:focus {
+  border: none;
+}
+
+.btn-slide i {
+  color: white;
+}
+
+.prev {
+  top: 50%;
+  left: 10px;
+  transform: translateY(-60%);
+}
+.next {
+  top: 50%;
+  right: 10px;
+  transform: translateY(-60%);
+}

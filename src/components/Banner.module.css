@@ -1,0 +1,34 @@
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(189, 189, 189);
+  height: 22.3rem;
+  border-radius: 2.5rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.banner img {
+  position: absolute;
+  object-fit: cover;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  mix-blend-mode: multiply;
+}
+
+.banner h1 {
+  z-index: 2;
+  font-size: 6vmin;
+  color: white;
+  padding-inline: 16px;
+}
+
+@media (max-width: 768px) {
+  .banner {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+  }
+}
