@@ -19,8 +19,16 @@ import aboutInfos from "./assets/aboutInfos.json";
 
 function App() {
   const [locations, setLocations] = useState(locationsData);
+  const [route, setRoute] = useState("home");
+
+  const handleRouteChange = (newRoute) => {
+    setRoute(newRoute);
+  };
 
   const Home = () => {
+    useEffect(() => {
+      handleRouteChange("home");
+    }, []);
     return (
       <>
         <Banner
@@ -34,6 +42,9 @@ function App() {
   };
 
   const About = () => {
+    useEffect(() => {
+      handleRouteChange("about");
+    }, []);
     return (
       <>
         <Banner className={styles.section} bannerimg={bannerImgAbout} />
@@ -51,6 +62,15 @@ function App() {
     const location = locationsData.find((location) => {
       return location.id === params.id;
     });
+
+    useEffect(() => {
+      if (location) {
+        handleRouteChange("");
+      } else {
+        handleRouteChange("error");
+      }
+    }, []);
+
     if (!location) return <ErrorPage />;
     return <Location className={styles.section} props={location} />;
   };
@@ -58,13 +78,22 @@ function App() {
   return (
     <>
       <header>
-        <Navbar className={styles.section} />
+        <Navbar className={styles.section} route={route} />
       </header>
       <main>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/:id" element={<LocationPage />} />
+          <Route
+            path="/"
+            element={<Home handleRouteChange={handleRouteChange} />}
+          />
+          <Route
+            path="/about"
+            element={<About handleRouteChange={handleRouteChange} />}
+          />
+          <Route
+            path="/:id"
+            element={<LocationPage handleRouteChange={handleRouteChange} />}
+          />
         </Routes>
       </main>
       <Footer />

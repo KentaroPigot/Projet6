@@ -2,14 +2,14 @@ import React from "react";
 import styles from "./Navbar.module.css";
 import logo from "../assets/LOGO.png";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+// import { useState } from "react";
 
 function Navbar(props) {
-  const [route, setRoute] = useState("home");
-
-  const onChangeHandler = (e) => {
-    setRoute(e.target.innerHTML);
-  };
+  // const onChangeHandler = () => {
+  //   const params = useParams();
+  //   console.log(params);
+  //   // setRoute(params);
+  // };
 
   return (
     <div className={`${styles.navbar} ${props.className}`}>
@@ -20,18 +20,16 @@ function Navbar(props) {
         <ul>
           <li>
             <Link
-              className={route === "Accueil" ? styles.active : ""}
+              className={props.route === "home" ? styles.active : ""}
               to="/"
-              onClick={onChangeHandler}
             >
               Accueil
             </Link>
           </li>
           <li>
             <Link
-              className={route === "A Propos" ? styles.active : ""}
+              className={props.route === "about" ? styles.active : ""}
               to="/about"
-              onClick={onChangeHandler}
             >
               A Propos
             </Link>
