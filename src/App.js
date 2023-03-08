@@ -19,11 +19,6 @@ import aboutInfos from "./assets/aboutInfos.json";
 
 function App() {
   const [locations, setLocations] = useState(locationsData);
-  const [route, setRoute] = useState("home");
-
-  useEffect(() => {
-    setRoute(window.location.pathname);
-  }, []);
 
   const Home = () => {
     return (
@@ -63,7 +58,7 @@ function App() {
   return (
     <>
       <header>
-        <Navbar className={styles.section} route={route} />
+        <Navbar className={styles.section} />
       </header>
       <main>
         <Routes>

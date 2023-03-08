@@ -2,8 +2,15 @@ import React from "react";
 import styles from "./Navbar.module.css";
 import logo from "../assets/LOGO.png";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 function Navbar(props) {
+  const [route, setRoute] = useState("home");
+
+  const onChangeHandler = (e) => {
+    setRoute(e.target.innerHTML);
+  };
+
   return (
     <div className={`${styles.navbar} ${props.className}`}>
       <Link to="/">
@@ -13,16 +20,18 @@ function Navbar(props) {
         <ul>
           <li>
             <Link
-              className={props.route === "home" ? styles.active : ""}
+              className={route === "Accueil" ? styles.active : ""}
               to="/"
+              onClick={onChangeHandler}
             >
               Accueil
             </Link>
           </li>
           <li>
             <Link
-              className={props.route === "about" ? styles.active : ""}
+              className={route === "A Propos" ? styles.active : ""}
               to="/about"
+              onClick={onChangeHandler}
             >
               A Propos
             </Link>
