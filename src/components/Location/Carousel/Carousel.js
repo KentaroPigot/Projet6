@@ -38,9 +38,14 @@ function Carousel(props) {
           </div>
         );
       })}
-      <ButtonCarousel moveSlide={prevSlide} direction={"prev"} />
-      <ButtonCarousel moveSlide={nextSlide} direction={"next"} />
-      <span>{`${slideIndex}/${props.pics.length}`}</span>
+
+      {props.pics.length > 1 ? (
+        <>
+          <ButtonCarousel moveSlide={prevSlide} direction={"prev"} />
+          <ButtonCarousel moveSlide={nextSlide} direction={"next"} />
+          <span>{`${slideIndex}/${props.pics.length}`}</span>
+        </>
+      ) : null}
     </div>
   );
 }
