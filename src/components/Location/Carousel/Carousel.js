@@ -34,7 +34,7 @@ function Carousel(props) {
                 : `${styles.slide}`
             }
           >
-            <img src={pic} />
+            <img src={pic} alt="Plusieurs images du lieu" />
           </div>
         );
       })}

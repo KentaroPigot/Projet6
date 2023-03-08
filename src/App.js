@@ -53,7 +53,7 @@ function App() {
     setRoute("");
     const params = useParams();
     const location = locationsData.find((location) => {
-      return location.id == params.id;
+      return location.id === params.id;
     });
     if (!location) return <ErrorPage />;
     return <Location className={styles.section} props={location} />;

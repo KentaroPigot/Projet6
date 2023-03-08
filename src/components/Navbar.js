@@ -12,13 +12,16 @@ function Navbar(props) {
       <nav>
         <ul>
           <li>
-            <Link className={props.route === "home" && styles.active} to="/">
+            <Link
+              className={props.route === "home" ? styles.active : ""}
+              to="/"
+            >
               Accueil
             </Link>
           </li>
           <li>
             <Link
-              className={props.route === "about" && styles.active}
+              className={props.route === "about" ? styles.active : ""}
               to="/about"
             >
               A Propos

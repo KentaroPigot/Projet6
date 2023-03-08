@@ -24,7 +24,7 @@ function Location(props) {
         <div className={styles.header__p2}>
           <div className={styles.host}>
             <h3>{location.host.name}</h3>
-            <img src={location.host.picture} />
+            <img src={location.host.picture} alt="Propriétaire" />
           </div>
           <div className={styles.stars}>
             {Array(+location.rating)

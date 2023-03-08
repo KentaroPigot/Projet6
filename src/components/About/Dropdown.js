@@ -15,7 +15,7 @@ function Dropdown(props) {
         <h2>{props.title}</h2>
         <i
           className={`${"fa-solid fa-chevron-down fa-3x"} ${
-            isDropped && "fa-flip-vertical"
+            isDropped ? "fa-flip-vertical" : ""
           }`}
         ></i>
       </div>
