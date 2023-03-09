@@ -1,10 +1,10 @@
 import React from "react";
-import styles from "./LocationCard.module.css";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
+
+import styles from "./LocationCard.module.css";
 
 function LocationCard(props) {
-  const img = props.img;
-
   return (
     <div className={styles.location}>
       <img src={props.img} alt="Location"></img>
@@ -14,5 +14,11 @@ function LocationCard(props) {
     </div>
   );
 }
+
+LocationCard.propTypes = {
+  img: PropTypes.string,
+  id: PropTypes.string,
+  name: PropTypes.string,
+};
 
 export default LocationCard;

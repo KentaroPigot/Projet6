@@ -3,7 +3,7 @@ import styles from "./ButtonCarousel.module.css";
 
 function ButtonCarousel(props) {
   const moveSlide = () => {
-    props.moveSlide();
+    props.changeImage();
   };
 
   return (

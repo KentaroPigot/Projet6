@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./Dropdown.module.css";
 import { useState } from "react";
+import PropTypes from "prop-types";
 
 function Dropdown({ text, title, className }) {
   const [isDropped, setIsDropped] = useState(false);
@@ -36,5 +37,11 @@ function Dropdown({ text, title, className }) {
     </div>
   );
 }
+
+Dropdown.propTypes = {
+  text: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
+  title: PropTypes.string,
+  className: PropTypes.string,
+};
 
 export default Dropdown;

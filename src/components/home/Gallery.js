@@ -1,5 +1,6 @@
 import React from "react";
 import LocationCard from "./LocationCard";
+import PropTypes from "prop-types";
 
 import styles from "./Gallery.module.css";
 
@@ -19,5 +20,10 @@ function Gallery(props) {
     </div>
   );
 }
+
+LocationCard.propTypes = {
+  className: PropTypes.string,
+  locations: PropTypes.array,
+};
 
 export default Gallery;

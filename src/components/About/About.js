@@ -5,7 +5,7 @@ import aboutInfos from "../../assets/aboutInfos.json";
 import styles from "./About.module.css";
 import Banner from "../Banner.js";
 
-function About(props) {
+function About() {
   return (
     <>
       <Banner className={styles.section} bannerimg={bannerImgAbout} />

@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./Banner.module.css";
+import PropTypes from "prop-types";
 
 function Banner(props) {
   return (
@@ -9,5 +10,11 @@ function Banner(props) {
     </div>
   );
 }
+
+Banner.propTypes = {
+  className: PropTypes.string,
+  bannerImg: PropTypes.string,
+  message: PropTypes.string,
+};
 
 export default Banner;

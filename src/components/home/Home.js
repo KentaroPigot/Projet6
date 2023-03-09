@@ -3,6 +3,7 @@ import styles from "./Home.module.css";
 import bannerImgHome from "../../assets/bannerHome.webp";
 import Gallery from "./Gallery.js";
 import Banner from "../Banner.js";
+import PropTypes from "prop-types";
 
 function Home(props) {
   return (
@@ -16,5 +17,9 @@ function Home(props) {
     </>
   );
 }
+
+Home.propTypes = {
+  locations: PropTypes.array,
+};
 
 export default Home;

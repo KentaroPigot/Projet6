@@ -41,8 +41,8 @@ function Carousel({ pics }) {
 
       {pics.length > 1 ? (
         <>
-          <ButtonCarousel moveSlide={prevSlide} direction={"prev"} />
-          <ButtonCarousel moveSlide={nextSlide} direction={"next"} />
+          <ButtonCarousel changeImage={prevSlide} direction={"prev"} />
+          <ButtonCarousel changeImage={nextSlide} direction={"next"} />
           <span>{`${slideIndex}/${pics.length}`}</span>
         </>
       ) : null}

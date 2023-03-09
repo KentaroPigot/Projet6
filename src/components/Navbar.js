@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./Navbar.module.css";
 import logo from "../assets/LOGO.png";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 function Navbar(props) {
   return (
@@ -32,5 +33,10 @@ function Navbar(props) {
     </div>
   );
 }
+
+Navbar.propTypes = {
+  className: PropTypes.string,
+  route: PropTypes.string,
+};
 
 export default Navbar;

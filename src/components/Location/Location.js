@@ -6,6 +6,7 @@ import Tag from "./Tag";
 import { useParams } from "react-router-dom";
 import Loader from "../UI/Loader";
 import { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 
 function Location(props) {
   const [location, setLocation] = useState();
@@ -63,5 +64,9 @@ function Location(props) {
     </div>
   );
 }
+
+Location.propTypes = {
+  locations: PropTypes.array,
+};
 
 export default Location;

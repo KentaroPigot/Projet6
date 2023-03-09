@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./Tag.module.css";
+import PropTypes from "prop-types";
 
 function Tag(props) {
   return (
@@ -8,5 +9,9 @@ function Tag(props) {
     </div>
   );
 }
+
+Tag.propTypes = {
+  tag: PropTypes.string,
+};
 
 export default Tag;

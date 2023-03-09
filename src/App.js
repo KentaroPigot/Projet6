@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
-import PropTypes from "prop-types";
 
 import Navbar from "./components/Navbar.js";
 import Footer from "./components/Footer.js";
@@ -29,6 +28,7 @@ function App() {
             path="/locations/:id"
             element={<Location locations={locations} />}
           />
+          {/* <Route path= */}
         </Routes>
       </main>
       <Footer />
