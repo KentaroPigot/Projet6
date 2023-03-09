@@ -1,8 +1,8 @@
 import React from "react";
-import styles from "./DropdownLocation.module.css";
+import styles from "./Dropdown.module.css";
 import { useState } from "react";
 
-function DropdownLocation(props) {
+function Dropdown({ text, title, className }) {
   const [isDropped, setIsDropped] = useState(false);
 
   const onClickHandler = () => {
@@ -10,9 +10,10 @@ function DropdownLocation(props) {
   };
 
   return (
-    <div className={styles.dropdown}>
+    <div className={`${styles.dropdown} ${styles[className]}`}>
+      {/* <div className={styles.dropdown}> */}
       <div className={styles.header} onClick={onClickHandler}>
-        <h2>{props.title}</h2>
+        <h2>{title}</h2>
         <i
           className={`${"fa-solid fa-chevron-down fa-1x"} ${
             isDropped ? "fa-flip-vertical" : ""
@@ -21,14 +22,14 @@ function DropdownLocation(props) {
       </div>
       {isDropped && (
         <div className={styles.message}>
-          {Array.isArray(props.text) ? (
+          {Array.isArray(text) ? (
             <ul>
-              {props.text.map((li, i) => (
+              {text.map((li, i) => (
                 <li key={i}>{li}</li>
               ))}
             </ul>
           ) : (
-            <p>{props.text}</p>
+            <p>{text}</p>
           )}
         </div>
       )}
@@ -36,4 +37,4 @@ function DropdownLocation(props) {
   );
 }
 
-export default DropdownLocation;
+export default Dropdown;

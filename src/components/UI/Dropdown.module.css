@@ -3,6 +3,9 @@
   height: auto;
   margin-inline: auto;
 }
+.dropdown.about {
+  width: calc(100% - 40px);
+}
 
 .header {
   width: 100%;
@@ -39,6 +42,11 @@
   .dropdown {
     width: 100%;
   }
+
+  .dropdown.about {
+    width: calc(100% - 40px);
+  }
+
   .message {
     font-size: 12px;
   }

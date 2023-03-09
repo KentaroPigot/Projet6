@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Location.module.css";
 import Carousel from "./Carousel/Carousel";
-import DropdownLocation from "./DropdownLocation.js";
+import Dropdown from "../UI/Dropdown";
 import Tag from "./Tag";
 import { useParams } from "react-router-dom";
 import Loader from "../UI/Loader";
@@ -57,8 +57,8 @@ function Location(props) {
         </div>
       </div>
       <div className={styles.dropdowns}>
-        <DropdownLocation title={"Description"} text={location.description} />
-        <DropdownLocation title={"Equipements"} text={location.equipments} />
+        <Dropdown title={"Description"} text={location.description} />
+        <Dropdown title={"Equipements"} text={location.equipments} />
       </div>
     </div>
   );
