@@ -3,13 +3,13 @@ import styles from "./Carousel.module.css";
 import ButtonCarousel from "./ButtonCarousel";
 import { useState } from "react";
 
-function Carousel(props) {
+function Carousel({ pics }) {
   const [slideIndex, setSlideIndex] = useState(1);
 
   const nextSlide = () => {
-    if (slideIndex !== props.pics.length) {
+    if (slideIndex !== pics.length) {
       setSlideIndex(slideIndex + 1);
-    } else if (slideIndex === props.pics.length) {
+    } else if (slideIndex === pics.length) {
       setSlideIndex(1);
     }
   };
@@ -18,13 +18,13 @@ function Carousel(props) {
     if (slideIndex !== 1) {
       setSlideIndex(slideIndex - 1);
     } else if (slideIndex === 1) {
-      setSlideIndex(props.pics.length);
+      setSlideIndex(pics.length);
     }
   };
 
   return (
     <div className={styles.carousel}>
-      {props.pics.map((pic, index) => {
+      {pics.map((pic, index) => {
         return (
           <div
             key={index}
@@ -39,11 +39,11 @@ function Carousel(props) {
         );
       })}
 
-      {props.pics.length > 1 ? (
+      {pics.length > 1 ? (
         <>
           <ButtonCarousel moveSlide={prevSlide} direction={"prev"} />
           <ButtonCarousel moveSlide={nextSlide} direction={"next"} />
-          <span>{`${slideIndex}/${props.pics.length}`}</span>
+          <span>{`${slideIndex}/${pics.length}`}</span>
         </>
       ) : null}
     </div>

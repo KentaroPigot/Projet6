@@ -3,13 +3,28 @@ import styles from "./Location.module.css";
 import Carousel from "./Carousel/Carousel";
 import DropdownLocation from "./DropdownLocation.js";
 import Tag from "./Tag";
-import { useState } from "react";
+import { useParams } from "react-router-dom";
+import Loader from "../UI/Loader";
+import { useState, useEffect } from "react";
 
 function Location(props) {
-  const [location, setLocation] = useState(props.props);
+  const [location, setLocation] = useState();
+
+  const { id } = useParams();
+
+  useEffect(() => {
+    const locatio = props.locations.find((location) => {
+      return location.id === id;
+    });
+    setLocation(locatio);
+  }, [id, props.locations]);
+
+  if (!location) {
+    return <Loader />;
+  }
 
   return (
-    <div className={props.className}>
+    <div className={styles.section}>
       <Carousel pics={location.pictures} />
       <div className={styles.header}>
         <div className={styles.header__p1}>

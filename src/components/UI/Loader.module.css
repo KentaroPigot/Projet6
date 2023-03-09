@@ -1,0 +1,41 @@
+.container {
+  min-height: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.roofLeft {
+  opacity: 0;
+  animation: svgAnim 4s ease infinite;
+  animation-delay: 0s;
+}
+.roofRight {
+  opacity: 0;
+  animation: svgAnim 4s ease infinite;
+  animation-delay: 0.5s;
+}
+.wallLeft {
+  opacity: 0;
+  animation: svgAnim 4s ease infinite;
+  animation-delay: 1s;
+}
+.wallRight {
+  opacity: 0;
+  animation: svgAnim 4s ease infinite;
+  animation-delay: 1.5s;
+}
+.door {
+  opacity: 0;
+  animation: svgAnim 4s ease infinite;
+  animation-delay: 2s;
+}
+
+@keyframes svgAnim {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

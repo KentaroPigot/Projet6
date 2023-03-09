@@ -7,7 +7,7 @@ function LocationCard(props) {
 
   return (
     <div className={styles.location} style={{ backgroundImage: `url(${img})` }}>
-      <Link className={styles.container} to={props.id}>
+      <Link className={styles.container} to={`/locations/${props.id}`}>
         <h2>{props.name}</h2>
       </Link>
     </div>
