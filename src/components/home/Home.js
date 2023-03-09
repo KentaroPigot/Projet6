@@ -4,8 +4,13 @@ import bannerImgHome from "../../assets/bannerHome.webp";
 import Gallery from "./Gallery.js";
 import Banner from "../Banner.js";
 import PropTypes from "prop-types";
+import { useEffect } from "react";
 
 function Home(props) {
+  useEffect(() => {
+    props.routeChange("home");
+  }, [props]);
+
   return (
     <>
       <Banner

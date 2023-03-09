@@ -8,17 +8,22 @@ import Loader from "../UI/Loader";
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 
-function Location(props) {
+function Location({ locations, routeChange }) {
   const [location, setLocation] = useState();
 
   const { id } = useParams();
 
   useEffect(() => {
-    const locatio = props.locations.find((location) => {
+    routeChange("location");
+  }, [routeChange]);
+
+  // Check si id existe dans les data puis render
+  useEffect(() => {
+    const locatio = locations.find((location) => {
       return location.id === id;
     });
     setLocation(locatio);
-  }, [id, props.locations]);
+  }, [id, locations]);
 
   if (!location) {
     return <Loader />;
