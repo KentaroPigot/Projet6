@@ -12,7 +12,6 @@ function Dropdown({ text, title, className }) {
 
   return (
     <div className={`${styles.dropdown} ${styles[className]}`}>
-      {/* <div className={styles.dropdown}> */}
       <div className={styles.header} onClick={onClickHandler}>
         <h2>{title}</h2>
         <i

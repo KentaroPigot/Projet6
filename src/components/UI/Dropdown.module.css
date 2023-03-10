@@ -3,10 +3,6 @@
   height: auto;
   margin-inline: auto;
 }
-.dropdown.about {
-  width: calc(100% - 40px);
-}
-
 .header {
   width: 100%;
   background-color: rgb(255, 96, 96);

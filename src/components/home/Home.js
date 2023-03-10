@@ -6,10 +6,10 @@ import Banner from "../Banner.js";
 import PropTypes from "prop-types";
 import { useEffect } from "react";
 
-function Home(props) {
+function Home({ locations, routeChange }) {
   useEffect(() => {
-    props.routeChange("home");
-  }, [props]);
+    routeChange("home");
+  }, [routeChange]);
 
   return (
     <>
@@ -18,7 +18,7 @@ function Home(props) {
         bannerimg={bannerImgHome}
         message={"Chez vous, partout et ailleurs"}
       />
-      <Gallery className={styles.section} locations={props.locations} />
+      <Gallery className={styles.section} locations={locations} />
     </>
   );
 }
