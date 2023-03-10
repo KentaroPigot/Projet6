@@ -17,10 +17,6 @@ function App() {
 
   const [route, setRoute] = useState("home");
 
-  const updateRoute = (route) => {
-    setRoute(route);
-  };
-
   return (
     <>
       <header>
@@ -30,14 +26,12 @@ function App() {
         <Routes>
           <Route
             path="/"
-            element={<Home locations={locations} routeChange={updateRoute} />}
+            element={<Home locations={locations} routeChange={setRoute} />}
           />
-          <Route path="/about" element={<About routeChange={updateRoute} />} />
+          <Route path="/about" element={<About routeChange={setRoute} />} />
           <Route
             path="/locations/:id"
-            element={
-              <Location locations={locations} routeChange={updateRoute} />
-            }
+            element={<Location locations={locations} routeChange={setRoute} />}
           />
           <Route path="/*" element={<ErrorPage />} />
         </Routes>
