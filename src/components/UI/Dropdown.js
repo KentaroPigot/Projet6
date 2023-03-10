@@ -20,25 +20,13 @@ function Dropdown({ text, title, className }) {
           }`}
         ></i>
       </div>
-      {isDropped && (
-        <div className={styles.message}>
-          {Array.isArray(text) ? (
-            <ul>
-              {text.map((li, i) => (
-                <li key={i}>{li}</li>
-              ))}
-            </ul>
-          ) : (
-            <p>{text}</p>
-          )}
-        </div>
-      )}
+      {isDropped && <div className={styles.message}>{text}</div>}
     </div>
   );
 }
 
 Dropdown.propTypes = {
-  text: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
+  text: PropTypes.element,
   title: PropTypes.string,
   className: PropTypes.string,
 };

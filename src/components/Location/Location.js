@@ -62,8 +62,17 @@ function Location({ locations }) {
         </div>
       </div>
       <div className={styles.dropdowns}>
-        <Dropdown title={"Description"} text={location.description} />
-        <Dropdown title={"Equipements"} text={location.equipments} />
+        <Dropdown title={"Description"} text={<p>{location.description}</p>} />
+        <Dropdown
+          title={"Equipements"}
+          text={
+            <ul>
+              {location.equipments.map((li, i) => (
+                <li key={i}>{li}</li>
+              ))}
+            </ul>
+          }
+        />
       </div>
     </div>
   );

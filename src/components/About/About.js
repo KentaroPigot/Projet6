@@ -16,7 +16,7 @@ function About() {
               className={"about"}
               key={info.id}
               title={info.title}
-              text={info.text}
+              text={<p>{info.text}</p>}
             />
           );
         })}
