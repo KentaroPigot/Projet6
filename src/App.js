@@ -15,23 +15,18 @@ import locationsData from "./assets/data.json";
 function App() {
   const [locations, setLocations] = useState(locationsData);
 
-  const [route, setRoute] = useState("home");
-
   return (
     <>
       <header>
-        <Navbar className={styles.section} route={route} />
+        <Navbar className={styles.section} />
       </header>
       <main>
         <Routes>
-          <Route
-            path="/"
-            element={<Home locations={locations} routeChange={setRoute} />}
-          />
-          <Route path="/about" element={<About routeChange={setRoute} />} />
+          <Route path="/" element={<Home locations={locations} />} />
+          <Route path="/about" element={<About />} />
           <Route
             path="/locations/:id"
-            element={<Location locations={locations} routeChange={setRoute} />}
+            element={<Location locations={locations} />}
           />
           <Route path="/*" element={<ErrorPage />} />
         </Routes>

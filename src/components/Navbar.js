@@ -1,10 +1,12 @@
 import React from "react";
 import styles from "./Navbar.module.css";
 import logo from "../assets/LOGO.png";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import PropTypes from "prop-types";
 
 function Navbar(props) {
+  const location = useLocation();
+
   return (
     <div className={`${styles.navbar} ${props.className}`}>
       <Link to="/">
@@ -14,7 +16,7 @@ function Navbar(props) {
         <ul>
           <li>
             <Link
-              className={props.route === "home" ? styles.active : ""}
+              className={location.pathname === "/" ? styles.active : ""}
               to="/"
             >
               Accueil
@@ -22,7 +24,7 @@ function Navbar(props) {
           </li>
           <li>
             <Link
-              className={props.route === "about" ? styles.active : ""}
+              className={location.pathname === "/about" ? styles.active : ""}
               to="/about"
             >
               A Propos
@@ -36,7 +38,6 @@ function Navbar(props) {
 
 Navbar.propTypes = {
   className: PropTypes.string,
-  route: PropTypes.string,
 };
 
 export default Navbar;

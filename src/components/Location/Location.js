@@ -3,19 +3,18 @@ import styles from "./Location.module.css";
 import Carousel from "./Carousel/Carousel";
 import Dropdown from "../UI/Dropdown";
 import Tag from "./Tag";
+import { useLoaderData } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import Loader from "../UI/Loader";
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 
-function Location({ locations, routeChange }) {
+function Location({ locations }) {
   const [location, setLocation] = useState();
 
-  const { id } = useParams();
+  // const location = useLoaderData();
 
-  useEffect(() => {
-    routeChange("location");
-  }, [routeChange]);
+  const { id } = useParams();
 
   // Check si id existe dans les data puis render
   useEffect(() => {
