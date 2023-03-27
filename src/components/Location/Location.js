@@ -4,32 +4,13 @@ import Carousel from "./Carousel/Carousel";
 import Dropdown from "../UI/Dropdown";
 import Tag from "./Tag";
 import { useLoaderData } from "react-router-dom";
-import { useParams } from "react-router-dom";
-import Loader from "../UI/Loader";
-import { useState, useEffect } from "react";
-import PropTypes from "prop-types";
+import Section from "../UI/Section";
 
-function Location({ locations }) {
-  const [location, setLocation] = useState();
-
-  // const location = useLoaderData();
-
-  const { id } = useParams();
-
-  // Check si id existe dans les data puis render
-  useEffect(() => {
-    const locatio = locations.find((location) => {
-      return location.id === id;
-    });
-    setLocation(locatio);
-  }, [id, locations]);
-
-  if (!location) {
-    return <Loader />;
-  }
+function Location() {
+  const location = useLoaderData();
 
   return (
-    <div className={styles.section}>
+    <Section>
       <Carousel pics={location.pictures} />
       <div className={styles.header}>
         <div className={styles.header__p1}>
@@ -74,12 +55,8 @@ function Location({ locations }) {
           }
         />
       </div>
-    </div>
+    </Section>
   );
 }
-
-Location.propTypes = {
-  locations: PropTypes.array,
-};
 
 export default Location;

@@ -8,14 +8,12 @@ function LocationCard(props) {
   return (
     <div className={styles.location}>
       <img src={props.img} alt="Location" />
-      <Link className={styles.container} to={`/locations/${props.id}`}>
+      <Link className={styles.container} to={`/${props.id}`}>
         <h2>{props.name}</h2>
       </Link>
     </div>
   );
 }
-
-// blablablablabla
 
 LocationCard.propTypes = {
   img: PropTypes.string,

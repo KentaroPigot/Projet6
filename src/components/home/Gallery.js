@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import LocationCard from "./LocationCard";
 import PropTypes from "prop-types";
-
 import styles from "./Gallery.module.css";
+import LocationsContext from "../../context/locations-context";
 
 function Gallery(props) {
+  const locations = useContext(LocationsContext);
+
   return (
     <div className={`${styles.gallery} ${props.className}`}>
-      {props.locations.map((location) => {
+      {locations.map((location) => {
         return (
           <LocationCard
             key={location.id}

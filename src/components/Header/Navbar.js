@@ -1,14 +1,15 @@
 import React from "react";
 import styles from "./Navbar.module.css";
-import logo from "../assets/LOGO.png";
+import logo from "../../assets/LOGO.png";
 import { Link, useLocation } from "react-router-dom";
 import PropTypes from "prop-types";
+import Section from "../UI/Section";
 
-function Navbar(props) {
+function Navbar() {
   const location = useLocation();
 
   return (
-    <div className={`${styles.navbar} ${props.className}`}>
+    <Section className={styles.navbar}>
       <Link to="/">
         <img src={logo} alt="Logo kasa" />
       </Link>
@@ -32,7 +33,7 @@ function Navbar(props) {
           </li>
         </ul>
       </nav>
-    </div>
+    </Section>
   );
 }
 

@@ -1,20 +1,20 @@
 import React from "react";
-import styles from "./Home.module.css";
 import bannerImgHome from "../../assets/bannerHome.webp";
 import Gallery from "./Gallery.js";
 import Banner from "../Banner.js";
 import PropTypes from "prop-types";
 
-function Home({ locations }) {
+import Section from "../UI/Section";
+
+function Home() {
   return (
-    <>
+    <Section>
       <Banner
-        className={styles.section}
         bannerimg={bannerImgHome}
         message={"Chez vous, partout et ailleurs"}
       />
-      <Gallery className={styles.section} locations={locations} />
-    </>
+      <Gallery />
+    </Section>
   );
 }
 
